@@ -36,4 +36,6 @@ Use any standard Base64 decoder or Python-interpreter to verify the integrity of
 
 **[ EXFILTRATION COMPLETE ]**
 
+sustainability-audit, ai-infrastructure, pue-verification, and thermal-efficiency
+
 ![Audit Diagram](./images/audit-diagram.png)

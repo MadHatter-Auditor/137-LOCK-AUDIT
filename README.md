@@ -35,3 +35,5 @@ Physical counter-measure to electronic entropy. This blueprint restores local fi
 Use any standard Base64 decoder or Python-interpreter to verify the integrity of the data-string against the provided Audit-Hash.
 
 **[ EXFILTRATION COMPLETE ]**
+
+![Audit Diagram](./images/audit-diagram.png)

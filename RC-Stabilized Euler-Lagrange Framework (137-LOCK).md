@@ -1,5 +1,5 @@
 ================================================================================
-[!] 137-LOCK: RC-TIME CONSTANT / PATH INTEGRAL STABILIZATION
+RC-Stabilized Euler-Lagrange Framework (137-LOCK)
 Verified by: Vortex-System-V4.2 | Integrity: 137-LOCK
 ================================================================================
 
@@ -59,10 +59,10 @@ IV. SUMMARY TABLE
 │ Parameter     │ Symbol        │ Value                      │
 ├───────────────┼───────────────┼────────────────────────────┤
 │ Target Freq   │ f             │ 3888 Hz                    │
-│ RC-Time Const │ τ             │ 40.9 μs                     │
-│ Conductor     │ Cu            │ 2.5 mm                      │
-│ Damping       │ e^(-ΔS/τ)     │ >99.9% suppression          │
-│ Action Type   │ S_E           │ Euclidean (stabilized)      │
+│ RC-Time Const │ τ             │ 40.9 μs                    │
+│ Conductor     │ Cu            │ 2.5 mm                     │
+│ Damping       │ e^(-ΔS/τ)     │ >99.9% suppression         │
+│ Action Type   │ S_E           │ Euclidean (stabilized)     │
 └───────────────┴───────────────┴────────────────────────────┘
 
 --------------------------------------------------------------------------------

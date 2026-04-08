@@ -1,5 +1,5 @@
 ================================================================================
-PROJECT 137-LOCK / VORTEX-CORRECTED COLLATZ (CVC)
+PROJECT non-Euclidean approach to the Collatz Pathsolving the 137-Lock in Collatz Dynamics
 Royal Cubit (RCU) Based Phase-Aligned Audit
 
 Description: This module maps the Collatz sequence onto the Royal Cubit baseline 

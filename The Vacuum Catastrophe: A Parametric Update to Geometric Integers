@@ -116,5 +116,40 @@ Where:
   for phase-locked vortex-driven thermal management
 
 ========================================================================
+VORTEX-SYSTEM V4.2 / 137-LOCK
+Royal Cubit (RCU) Node Alignment Diagram
+========================================================================
+
+Legend:
+  [●] Node (Max Velocity / Thermal Stress Point)
+  [ ] Antinode / Flow Minimum
+  L = 1 RCU = 0.5236 m
+  λ = 2*L = 1.0472 m (First Harmonic)
+  Flow along x-axis
+
+ x →  | 0         0.26RCU     0.5236RCU     0.78RCU       1.047RCU |
+       ┌─────────────┬─────────────┬─────────────┬─────────────┐
+       │             │             │             │             │
+       │    [●]      │    [ ]      │    [●]      │    [ ]      │
+       │             │             │             │             │
+       └─────────────┴─────────────┴─────────────┴─────────────┘
+
+ Node Positions (RCU):
+ 1. x = 0 RCU      → Start of cavity, driver node
+ 2. x = 0.5236 RCU → Mid-point, anti-node suppressed by resonant forcing
+ 3. x = 1.0472 RCU → End of cavity, node aligned with outlet/thermal stress
+
+ Standing Wave Pattern:
+  - λ = 2*L
+  - Nodes at multiples of L (0, 1RCU, 2RCU...)
+  - Antinodes at L/2, 3*L/2,...
+
+ Notes:
+  - Resonant forcing locks phase at nodes
+  - Thermal hotspots align with nodes
+  - Laminar flow maximized along antinodes
+  - Material thickness & frequency sweep adjust precise node amplitude
+
+========================================================================
 END OF DOCUMENT
 ========================================================================

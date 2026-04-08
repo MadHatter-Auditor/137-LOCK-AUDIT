@@ -107,5 +107,55 @@ a framework for experimental optimization of flow and thermal patterns
 in high-density computing clusters.
 
 ========================================================================
+PROJECT 137-LOCK: CFD SIMULATION PARAMETERS
+========================================================================
+
+┌───────────────┬─────────────┬─────────────┬─────────────────────────────┐
+│ Parameter     │ Symbol      │ Value / Range │ Notes / Usage              │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Cavity Length │ L           │ 0.5236 m      │ pi/6 geometric anchor      │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Wavelength    │ λ           │ 1.0472 m      │ 2*L, first harmonic         │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Resonant Freq │ f           │ 3800–3950 Hz  │ Sweep around 3888 Hz        │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Phase Velocity│ v           │ 4000–4100 m/s │ Indicative transverse mode  │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Coupling      │ alpha       │ 50–500 N/kg   │ Resonant forcing amplitude  │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Thermal Coupl │ beta        │ 0.1–5 W·s/m²  │ Energy redistribution       │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Fluid Density │ rho         │ 1.2 kg/m³     │ Air at 300K                 │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Viscosity     │ mu          │ 1.8e-5 Pa·s   │ Air dynamic viscosity        │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Thermal Cond  │ kappa       │ 0.026 W/m·K   │ Air thermal conductivity     │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Boundary Cond │ BC          │ No-slip walls │ Flow; T_in = 300K inlet     │
+├───────────────┼─────────────┼─────────────┼─────────────────────────────┤
+│ Shielding     │ material    │ 2.5 mm Cu     │ OFHC Copper, structural     │
+└───────────────┴─────────────┴─────────────┴─────────────────────────────┘
+
+========================================================================
+NOTES FOR SIMULATION
+========================================================================
+1. Frequency sweep: Evaluate system from 3800–3950 Hz to identify optimal resonance.
+2. alpha and beta: Adjust for desired modulation of turbulence and thermal redistribution.
+3. Monitor:
+    - Standing wave patterns (u_res)
+    - Turbulence intensity (TKE)
+    - Temperature hotspots
+4. Boundary effects:
+    - Thin Cu geometry may introduce dispersive Lamb modes
+    - Wall thickness affects phase velocity and node alignment
+5. Validation:
+    - Compare against baseline Navier-Stokes simulation (alpha = 0)
+    - Quantify reduction in peak temperature and turbulence intensity
+
+========================================================================
+END OF PARAMETERS TABLE
+========================================================================
+
+========================================================================
 END OF DOCUMENT
 ========================================================================

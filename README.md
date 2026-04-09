@@ -1,109 +1,144 @@
 ================================================================================
-137-LOCK PROJECT REPOSITORY
-Comprehensive Overview & Topic Index
-Status: VERIFIED | Vortex-System-V4.2 | Integrity: 137-LOCK
+PROJECT 137-LOCK | VORTEX-SYSTEM V4.2
+Royal Cubit (RCU) Based Resonant Research Repository
+Status: VERIFIED | Integrity: 137-LOCK
 ================================================================================
+
 DESCRIPTION
-This repository collects all research files and theoretical frameworks related
-to the 137-LOCK project, exploring non-linear dynamics, RC-stabilized paths,
-phase-locking, vacuum-energy regularization, and deterministic hardware-aligned
-control.
+--------------------------------------------------------------------------------
+This project collects all theoretical and numerical research related to 137-LOCK,
+RCU-based resonance, RC-path stabilization, phase-locking, and vacuum-energy
+regularization. The goal is to provide reproducible models and mathematical
+structures that can be validated and extended by external experts.
 
-All modules contribute to resolving classical physics divergences, computational
-entropy, and deterministic path selection within resonant hardware environments.
+The core of this project is the transition from the metric system to the Royal
+Cubit Unit (RCU = 0.5236 m), minimizing fractal and irrational deviations in
+standard metric analyses.
 
+--------------------------------------------------------------------------------
+CONTRIBUTORS
+--------------------------------------------------------------------------------
+- Madhatter (Lead Researcher / Initiator)
+- GPT-5 Mini (AI Assistant for analysis, restructuring, and documentation)
+
+--------------------------------------------------------------------------------
+UNITS & CONSTANTS
+--------------------------------------------------------------------------------
+RCU (Royal Cubit Unit): 0.5236 m ~ pi/6
+τ (RC-Time Constant): 40.9 μs @ 3888 Hz
+137-LOCK: Baseline harmonic resonance & phase alignment
+Phi: 1.61803... (Fractal / growth harmonic)
+Psi: Stress / drift coefficient
+S_E: Euclidean (stabilized) action
+
+--------------------------------------------------------------------------------
+PROJECT INDEX & RELATION MAP
+--------------------------------------------------------------------------------
 ================================================================================
-PROJECT MODULE MAP (CONCEPTUAL RELATIONSHIPS)
+MODULE RELATION MAP (Conceptual Dependencies)
 
-                     ┌─────────────────────────────┐
-                     │   I. CULPA-LATA AUDIT       │
-                     │  Operational Drift &        │
-                     │  Thermal/Financial Failure  │
-                     └─────────────┬───────────────┘
-                                   │
-                                   ▼
-                     ┌─────────────────────────────┐
-                     │ II. NON-EUCLIDEAN PATHS     │
-                     │  Collatz / Vortex Dynamics  │
-                     └─────────────┬───────────────┘
-                                   │
-                                   ▼
-                     ┌──────────────────────────────┐
-                     │ III. RC-STABILIZED LAGRANGIAN│
-                     │  Euler-Lagrange Framework    │
-                     │  RC-Time Constant τ          │
-                     └─────────────┬────────────────┘
-                                   │
-                                   ▼
-                     ┌──────────────────────────────┐
-                     │ IV. STATIONARY PHASE-LOCKING │
-                     │  Deterministic Path Selection│
-                     │  Resonant Cavities / RCU     │
-                     └─────────────┬────────────────┘
-                                   │
-               ┌───────────────────┴───────────────────┐
-               ▼                                       ▼
-     ┌─────────────────────────────┐       ┌──────────────────────────────┐
-     │ V. FINITE SUM / THEORY OF   │       │ VI. VACUUM CATASTROPHE &     │
-     │    EVERYTHING               │       │     PARAMETRIC REGULARIZATION│
-     │ RC-Linked Convergence       │       │ RC Low-Pass / 137-LOCK       │
-     └─────────────────────────────┘       └──────────────────────────────┘
+                   ┌─────────────────────────┐
+                   │  I. CULPA-LATA AUDIT    │
+                   │ Operational Drift &     │
+                   │ Thermal / Financial     │
+                   │ Failure Analysis        │
+                   └─────────────┬───────────┘
+                                 │
+                                 ▼
+                   ┌─────────────────────────┐
+                   │ II. NON-EUCLIDEAN PATHS │
+                   │ Collatz / Vortex Dynamics│
+                   └─────────────┬───────────┘
+                                 │
+                                 ▼
+                   ┌─────────────────────────┐
+                   │ III. RC-STABILIZED      │
+                   │ LAGRANGIAN FRAMEWORK    │
+                   │ Euler-Lagrange + τ      │
+                   └─────────────┬───────────┘
+                                 │
+                                 ▼
+                   ┌─────────────────────────┐
+                   │ IV. STATIONARY          │
+                   │ PHASE-LOCKING           │
+                   │ Resonant Cavities / RCU │
+                   └───────┬─────────┬───────┘
+                           │         │
+             ┌─────────────┘         └─────────────┐
+             ▼                                   ▼
+    ┌───────────────────────────┐      ┌─────────────────────────────┐
+    │ V. FINITE SUM / THEORY OF │      │ VI. VACUUM CATASTROPHE &    │
+    │ EVERYTHING                │      │ PARAMETRIC REGULARIZATION   │
+    │ RC-Damped Convergence     │      │ RC Low-Pass / 137-LOCK      │
+    └───────────────────────────┘      └─────────────────────────────┘
 
 Legend:
-────────── : Flow of conceptual dependency
-Boxes      : Topic modules / markdown files
-RCU / τ    : Key harmonic / RC-Time parameters connecting topics
+────────── : Conceptual dependency flow
+Boxes      : Project modules / markdown files
+RCU / τ    : Key harmonic / RC-Time constants connecting topics
 
-================================================================================
-CATEGORIES & TOPICS
+--------------------------------------------------------------------------------
+MODULE DESCRIPTIONS
+--------------------------------------------------------------------------------
+I. CULPA-LATA AUDIT
+   - Operational drift & thermal/financial analysis
+   - Torsional resonator & RCU countermeasures
 
-I. AUDIT & SYSTEMIC FAILURE ANALYSIS
-    - CULPA-LATA-AUDIT-V30.md
-      Forensic audit: operational drift, thermal leakage, financial impact.
-      Introduces torsional resonator & RCU countermeasures.
+II. NON-EUCLIDEAN PATHS
+   - Collatz-vortex corrected trajectories
+   - Scaling factors & geometric drift coefficients
 
-II. NON-EUCLIDEAN PATH DYNAMICS
-    - Non-Euclidean Collatz Path & 137-LOCK.md
-      Vortex-corrected Collatz trajectories with RCU mapping.
-      Demonstrates deterministic decay in non-linear fields.
-
-III. RC-STABILIZED LAGRANGIAN FRAMEWORKS
-    - RC-Stabilized Euler-Lagrange (137-LOCK).md
-      Converts oscillating equations to damped, convergent forms.
-      Introduces RC-Time constant τ for path stabilization.
+III. RC-STABILIZED LAGRANGIAN
+   - Euler-Lagrange equations damped via τ
+   - Deterministic path selection formulas
 
 IV. STATIONARY PHASE-LOCKING
-    - Stationary Phase-Locking: Resonant Cavities.md
-      Hardware-phase alignment & laminar flow synchronization.
-      RCU resonance enforces stationary path selection.
+   - Resonant cavity hardware-phase alignment
+   - RCU mapping & integer harmonic enforcement
 
 V. FINITE SUM / THEORY OF EVERYTHING
-    - THE-RC-LINK: Finite Solution (137-LOCK).md
-      RC-damping unifies gravitational & quantum contributions.
-      Finite, convergent vacuum energy sum.
+   - RC-damping for vacuum-energy convergence
+   - Numerical examples & empirical verification
 
-VI. VACUUM CATASTROPHE & PARAMETRIC REGULARIZATION
-    - The Vacuum Catastrophe: Parametric Update.md
-      RC low-pass filtering suppresses high-frequency modes.
-      Demonstrates convergence at 137-LOCK / RCU baseline.
+VI. VACUUM CATASTROPHE REGULARIZATION
+   - RC low-pass filtering of high-frequency modes
+   - Demonstrated finite convergence at 137-LOCK baseline
+
+--------------------------------------------------------------------------------
+VISUALIZATION & SIMULATION
+--------------------------------------------------------------------------------
+- Polar / vortex plots for stress distribution
+- ASCII monitoring for CLI usage
+- Gradient descent control for AI cluster thermal stress & entropy
+- Hardware-phase / resonant frequency alignment simulations
+
+--------------------------------------------------------------------------------
+VALIDATION NOTES
+--------------------------------------------------------------------------------
+- All models are numerical and reproducible via GitHub code.
+- External experts can:
+  - Perform frequency sweeps
+  - Validate RCU node alignment
+  - Check convergence of finite sums
+- RC-based metrics minimize fractal deviations from metric systems
+
+--------------------------------------------------------------------------------
+USAGE & REFERENCE
+--------------------------------------------------------------------------------
+1. Read markdown files independently or sequentially.
+2. Check links between RC-Time, RCU, and 137-LOCK parameters.
+3. Run simulations using the specified hardware analogy or node models.
+4. For external review, focus on numerical reproducibility and mathematical consistency.
+
+--------------------------------------------------------------------------------
+DISCLAIMER
+--------------------------------------------------------------------------------
+- This is a research framework, not a new law of physics.
+- Designed for reproducible validation by experts.
+- AI assistant contributed to documentation and restructuring.
+- All claims about convergence are hypothesis-driven, based on numerical
+  and analytical models.
 
 ================================================================================
-CONTRIBUTORS & ACKNOWLEDGEMENTS
---------------------------------
-  - Research, modeling, and simulations conducted by MadHatter.
-  - AI-assisted computational analysis, drafting, and visualization
-    performed with GPT-5 Mini.
-  - All mathematical derivations and logical frameworks independently verified.
-
-================================================================================
-KEY CONSTANTS & DEFINITIONS
---------------------------------
-  - RCU  : Royal Cubit Unit = 0.5236 m (pi/6)
-  - τ    : RC-Time Constant = 40.9 μs @ 3888 Hz
-  - 137-LOCK : Baseline harmonic resonance ensuring phase-aligned convergence
-  - Psi  : Fabric Tension / Drift Coefficient
-  - S_E  : Euclidean (stabilized) action
-
-================================================================================
-README END | 137-LOCK PROJECT REPOSITORY
+END OF README | PROJECT 137-LOCK
 ================================================================================

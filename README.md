@@ -1,152 +1,125 @@
 ================================================================================
-PROJECT 137-LOCK | VORTEX-SYSTEM V4.2 (CLEAN)
-Resonant Modeling & Thermal Control Framework
-Status: STRUCTURED | Peer-Review Ready (Partial)
+PROJECT 137-LOCK | VORTEX-SYSTEM V4.2
+RCU-Based Resonant Research Framework
+Status: RESEARCH FRAMEWORK (THEORETICAL + EXPERIMENTAL + NUMERICAL)
 ================================================================================
 
 DESCRIPTION
 --------------------------------------------------------------------------------
-This repository contains a structured collection of mathematical models and
-numerical simulations for analyzing and controlling complex systems such as:
+This repository contains a structured research framework for analyzing:
 
-- Thermal behavior in high-density compute clusters
-- Modal dynamics in fluid and structural systems
-- Reduced-order representations of complex physics
+- Thermal stress and entropy in compute systems
+- Drift dynamics and stochastic fluctuations
+- Resonant and phase-locking behavior
+- Numerical and experimental validation methods
 
-The goal is to provide reproducible, testable models that can be validated
-and extended by external researchers.
+The framework is designed to be:
+- mathematically consistent
+- physically grounded
+- experimentally testable
+- numerically reproducible
 
 --------------------------------------------------------------------------------
 UNITS & SCALING
 --------------------------------------------------------------------------------
-Reference Length (L_ref) : 0.5236 m (user-defined scaling constant)
-Time Constant (τ)       : System-dependent damping parameter
-                          (example: τ ≈ 4.09e-5 s for 3888 Hz)
+Primary working unit:
+- RCU (Royal Cubit Unit) = 0.5236 m
 
-NOTE:
-- The reference length is a geometric scaling choice
-- It does NOT alter physical laws
-- All equations remain dimensionally consistent
+Note:
+- RCU is used as a reference scaling choice
+- All physical equations remain unit-invariant
 
 --------------------------------------------------------------------------------
-CORE PRINCIPLES
---------------------------------------------------------------------------------
-1. Modal decomposition (Galerkin-based methods)
-2. Damped dynamic systems (stable evolution)
-3. Energy and entropy tracking
-4. Numerical stability and reproducibility
-5. Separation of validated physics and hypothesis
-
---------------------------------------------------------------------------------
-MODULE MAP & STATUS
+MODULE OVERVIEW
 --------------------------------------------------------------------------------
 
-I. THERMAL-STRESS & ENTROPY CONTROL
-   Status: SOLID MATH
-   - Thermal stress: σ_i = E α ΔT_i
-   - Entropy production: S_dot = Σ (Q_i / T_i)
-   - Gradient-based optimization (Q_i, h_i)
-   - Discrete-time thermal evolution
-   - Fully numerically implementable
+Module 1 — Stress & Entropy Control
+- Thermal model
+- Gradient-based optimization
 
--------------------------------------------------------------------------------
+Module 2 — Modal Dynamics & Damped Evolution
+- System dynamics
+- Stability behavior
 
-II. MODAL DYNAMICS & DAMPED EVOLUTION
-   Status: SOLID MATH
-   - u(x,t) = Σ_k u_k(t) φ_k(x)
-   - du_k/dt = -λ_k u_k + Σ C_kl u_l + ξ_k
-   - Stable, reduced-order system representation
-   - Compatible with CFD and structural dynamics
-   - Acts as a low-pass filtered system
+Module 3 — Lagrangian & Damping Formulation
+- Energy-based system modeling
 
--------------------------------------------------------------------------------
+Module 4 — Stationary Phase-Locking
+- Resonance and node alignment
 
-III. RESONANT FLOW & CFD EXTENSION
-   Status: HYPOTHESIS (TESTABLE)
-   - Modified Navier-Stokes with spatial forcing
-   - External potential: V(x) = α cos(2πx / L_ref)
-   - Goal: influence flow structures and heat distribution
-   - Requires experimental validation
+Module 5 — Finite Sum & Regularization
+- Convergence methods (mathematical)
 
--------------------------------------------------------------------------------
+Module 6 — Discrete / Collatz Dynamics
+- Mathematical exploration (non-physical)
 
-IV. PHASE-LOCKING & GEOMETRIC ALIGNMENT
-   Status: ENGINEERING MODEL
-   - Standing wave interpretation in bounded domains
-   - Node / antinode structure
-   - Application: hardware geometry alignment
-   - Requires empirical verification
+Module 7 — Drift Dynamics & Dissipation
+- Langevin-based fluctuation model
 
--------------------------------------------------------------------------------
+Module 7.2 — Thermal–Drift Coupling
+- Links temperature to fluctuations
 
-V. COLLatz / DISCRETE DYNAMICS MODEL
-   Status: EXPERIMENTAL / MATHEMATICAL EXPLORATION
-   - Discrete iterative mapping (3n+1)
-   - Visualization using phase-like representations
-   - No formal proof claims included
+Module 8 — Experimental Validation
+- Measurement protocol
+- Real-world testing
 
--------------------------------------------------------------------------------
-
-VI. VACUUM ENERGY & RC-FILTER ANALOGY
-   Status: SPECULATIVE PHYSICS
-   - Exponential damping applied to frequency sums
-   - Interpreted as mathematical regularization
-   - NOT a replacement for physical renormalization
-   - Included for conceptual exploration only
-
--------------------------------------------------------------------------------
-
-VII. VALIDATION FRAMEWORK
-   Status: IN DEVELOPMENT
-   - Numerical reproducibility
-   - Parameter sweeps
-   - Experimental measurement definitions
-   - Comparison with baseline models
-
--------------------------------------------------------------------------------
-
-VIII. FORMULAE & NUMERICAL METHODS
-   Status: SOLID MATH
-   - Discrete integration schemes
-   - Stability conditions (Δt constraints)
-   - Optimization routines
-   - Data visualization methods
+Module 9 — Data Analysis & Model Fitting
+- Parameter extraction
+- Statistical validation
 
 --------------------------------------------------------------------------------
-NUMERICAL IMPLEMENTATION
+APPENDICES
 --------------------------------------------------------------------------------
-- Python / NumPy based simulations
-- Explicit time-stepping methods
-- Log-domain calculations for stability (where needed)
-- Modular structure for testing individual components
+
+Appendix A — Reference Test Case
+- Complete numerical example
+
+Appendix B — Realistic Scaling
+- Physical parameter calibration
+
+Appendix C — Implementation
+- Python simulation framework
 
 --------------------------------------------------------------------------------
 VALIDATION STRATEGY
 --------------------------------------------------------------------------------
-1. Verify numerical stability of each module
-2. Compare against known physical models (baseline)
-3. Perform parameter sweeps
-4. Identify measurable observables:
-   - Temperature
-   - Energy dissipation
-   - Mode amplitudes
+
+The framework follows a full validation chain:
+
+    Theory → Simulation → Experiment → Data Analysis
+
+Each stage is explicitly defined and reproducible.
+
+--------------------------------------------------------------------------------
+KEY CAPABILITIES
+--------------------------------------------------------------------------------
+
+- Thermal stress minimization
+- Entropy-aware control
+- Fluctuation modeling
+- Stability analysis
+- Experimental validation
+- Numerical simulation
 
 --------------------------------------------------------------------------------
 DISCLAIMER
 --------------------------------------------------------------------------------
-- This is a research framework, not a new physical theory
-- Solid math modules are numerically verifiable
-- Hypothesis modules require experimental validation
-- Speculative sections are clearly labeled
+
+- This is a research framework, not a finalized physical theory
+- Speculative elements are isolated in specific modules
+- Core modules are mathematically and physically grounded
+- External validation is required
 
 --------------------------------------------------------------------------------
 USAGE
 --------------------------------------------------------------------------------
-1. Study modules independently
-2. Run numerical simulations
-3. Validate against known physics
-4. Extend models where appropriate
 
-================================================================================
-END OF README | PROJECT 137-LOCK (CLEAN v2.0)
+1. Start with Module 1 and 2 (core system)
+2. Use Module 7 and 7.2 for fluctuation modeling
+3. Validate via Module 8
+4. Analyze results via Module 9
+5. Run simulations using Appendix C
+
+--------------------------------------------------------------------------------
+END OF README
 ================================================================================

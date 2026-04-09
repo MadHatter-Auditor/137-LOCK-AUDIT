@@ -1,169 +1,75 @@
-===============================================================================
-MODULE 4 — PHASE-LOCKING & RESONANT GEOMETRY
-137-LOCK / VORTEX-SYSTEM V4.2
-===============================================================================
+================================================================================
+MODULE 4 — STATIONARY PHASE-LOCKING & RESONANCE
+STATUS: PHYSICAL / ENGINEERING MODEL
+================================================================================
 
-STATUS: SEMI-EMPIRICAL MODEL
-TYPE: GEOMETRIC + WAVE-BASED FRAMEWORK
+I. PURPOSE
+--------------------------------------------------------------------------------
+This module describes resonance and phase-locking in bounded systems.
 
--------------------------------------------------------------------------------
-1. OBJECTIVE
--------------------------------------------------------------------------------
-This module describes how geometry and frequency interact to produce
-phase-locking in physical systems (mechanical, thermal, or electrical).
+Goal:
+- Analyze standing wave formation
+- Understand node/antinode structure
 
-Goals:
-- Identify stable resonance conditions
-- Structure spatial energy distribution
-- Reduce modal instability
+================================================================================
+II. RESONANCE CONDITION
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-2. REFERENCE SCALE (RCU)
--------------------------------------------------------------------------------
-Length is expressed using:
+For a cavity of length L:
 
-    L = 1 RCU
+    lambda_n = 2L / n
 
-where:
+    f_n = v / lambda_n
 
-    1 RCU = π / 6 ≈ 0.5236 m
+Where:
+- n : integer mode number
+- v : wave velocity
 
-Important:
-- RCU is a chosen reference scale (not a physical constant)
-- All equations remain scale-invariant (unit-independent)
+================================================================================
+III. PHASE-LOCKING
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-3. STANDING WAVE MODEL
--------------------------------------------------------------------------------
-For a 1D resonator:
-
-    u(x,t) = A * sin(kx) * cos(ωt)
-
-with:
-
-    k = nπ / L
-    ω = v * k
-
-where:
-
-    n = 1,2,3,... (mode index)
-
--------------------------------------------------------------------------------
-4. NODE / ANTINODE STRUCTURE
--------------------------------------------------------------------------------
-Nodes (u = 0):
-
-    x_n = n * (L / 2)
-
-Antinodes (maximum amplitude):
-
-    x_a = (2n + 1) * (L / 4)
-
-For L = 1 RCU:
-
-    x → 0      0.5RCU     1.0RCU
-         [●]----[ ]--------[●]
-
-Legend:
-    [●] = node (minimum amplitude)
-    [ ] = antinode (maximum amplitude)
-
--------------------------------------------------------------------------------
-5. PHASE-LOCKING CONDITION
--------------------------------------------------------------------------------
 Phase-locking occurs when:
 
-    L = m * (λ / 2)
-
-or equivalently:
-
-    kL = mπ
-
-where:
-
-    m ∈ ℕ
-
-Interpretation:
-- Only discrete frequencies are stable
-- Non-resonant frequencies are suppressed
-
--------------------------------------------------------------------------------
-6. DAMPING & STABILITY
--------------------------------------------------------------------------------
-With damping (see Module 2):
-
-    du_k/dt = ... - u_k / τ
-
-Effect:
-- High-frequency modes decay faster
-- System converges to low-order modes
+    external forcing frequency ≈ f_n
 
 Result:
-- Stable spatial pattern
-- Reduced phase drift
+- stable standing wave patterns
 
--------------------------------------------------------------------------------
-7. PHYSICAL INTERPRETATION
--------------------------------------------------------------------------------
-This model implies:
+================================================================================
+IV. NODE STRUCTURE
+--------------------------------------------------------------------------------
 
-- Geometry determines allowed modes
-- Damping selects which modes survive
-- Phase-locking emerges from resonance
+Nodes:
 
-Applicable to:
-- Mechanical resonators
-- Thermal distributions (indirect coupling)
-- Electrical systems (RC / LC analogies)
+    x = k * (L / n)
 
--------------------------------------------------------------------------------
-8. IMPORTANT CLARIFICATION
--------------------------------------------------------------------------------
-- There is NO evidence that specific lengths (such as RCU)
-  are fundamentally special in physics
+Antinodes:
 
-- The model is valid for any length scale L
+    x = (k + 1/2) * (L / n)
 
-- The choice of RCU is:
-    → a parametrization choice
-    → not a fundamental constant
+================================================================================
+V. INTERPRETATION
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-9. VALIDATION
--------------------------------------------------------------------------------
-Experimentally testable via:
+- Resonance depends on geometry and boundary conditions
+- No special universal frequencies are assumed
+- Frequency selection is system-dependent
 
-- Frequency sweeps
-- Spatial amplitude measurements
-- Identification of nodes and antinodes
+================================================================================
+VI. NOTE ON SCALING
+--------------------------------------------------------------------------------
 
-Success criteria:
-- Discrete resonance peaks
-- Stable spatial patterns
-- Reproducibility
+Reference units (e.g. RCU) may be used for convenience, but do not affect
+the underlying physics.
 
--------------------------------------------------------------------------------
-10. RELATION TO OTHER MODULES
--------------------------------------------------------------------------------
-- Module 1 → stress and energy distribution at nodes
-- Module 2 → time evolution of modes
-- Module 3 → damping and path selection
-- Module 4 → spatial structure of resonance
+================================================================================
+VII. CONCLUSION
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-CONCLUSION
--------------------------------------------------------------------------------
-Phase-locking emerges from:
+Phase-locking is governed by standard resonance conditions and boundary
+constraints.
 
-    geometry + dynamics + damping
-
-Not from:
-    specific numerical constants
-
-This module provides:
-- A physically grounded description of resonance
-- A structural basis for coupling with thermal systems
-
-===============================================================================
+================================================================================
 END OF MODULE 4
-===============================================================================
+================================================================================

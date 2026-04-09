@@ -34,21 +34,21 @@ MODULE MAP & THEORY STATUS
 --------------------------------------------------------------------------------
 Module | Focus Area                        | Theory Status
 -------|-----------------------------------|------------------------------
-I      | CULPA-LATA AUDIT                   | [SOLID MATH]
+I      | CULPA-LATA AUDIT                  | [SOLID MATH]
        | - Operational drift & thermal analysis
        | - Psi-node calculation & stress mapping
 
-II     | NON-EUCLIDEAN PATHS                | [SOLID MATH]
+II     | NON-EUCLIDEAN PATHS               | [SOLID MATH]
        | - Collatz-vortex corrected trajectories
        | - Geometric drift & scaling factors
 
-III    | RC-STABILIZED LAGRANGIAN           | [SOLID MATH / HYPOTHESIS]
+III    | RC-STABILIZED LAGRANGIAN          | [SOLID MATH / HYPOTHESIS]
        | - Euler-Lagrange damping via τ
        | - Deterministic path selection formulas
        | - Numerical convergence demonstrated
        | - Exponential RC damping for high-freq suppression [HYPOTHESIS]
 
-IV     | STATIONARY PHASE-LOCKING           | [SOLID MATH]
+IV     | STATIONARY PHASE-LOCKING          | [SOLID MATH]
        | - Resonant cavity hardware-phase alignment
        | - RCU mapping & integer harmonic enforcement
        | - ASCII Node / Antinode Diagram:

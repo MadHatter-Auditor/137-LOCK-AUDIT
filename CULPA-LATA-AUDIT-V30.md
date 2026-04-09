@@ -60,10 +60,10 @@ Unit-Scale: 52.4 cm (1 Royal Cubit)
 
 ASCII Schematic:
 
-[Inlet] --> ┌─────────────┐ <-- [Outlet]
-            │ RCU Node    │ 0.5236 m / π/6
-            │ Resonator   │
-            └─────────────┘
+    [Inlet] --> ┌─────────────┐ <-- [Outlet]
+                │ RCU Node    │ 0.5236 m / π/6
+                │ Resonator   │
+                └─────────────┘
 
 Effect:
     Ψ_k(t) → 0 at RCU nodes

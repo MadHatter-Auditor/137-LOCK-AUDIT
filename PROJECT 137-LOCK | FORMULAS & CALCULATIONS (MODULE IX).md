@@ -38,12 +38,14 @@ I      | CULPA-LATA AUDIT                   | [SOLID MATH]
 
        | - Operational drift & thermal analysis
        | - Psi-node calculation & stress mapping
-
+       
+-------|-----------------------------------|------------------------------
 II     | NON-EUCLIDEAN PATHS                | [SOLID MATH]
 
        | - Collatz-vortex corrected trajectories
        | - Geometric drift & scaling factors
 
+-------|-----------------------------------|------------------------------
 III    | RC-STABILIZED LAGRANGIAN           | [SOLID MATH / HYPOTHESIS]
 
        | - Euler-Lagrange damping via τ
@@ -51,6 +53,7 @@ III    | RC-STABILIZED LAGRANGIAN           | [SOLID MATH / HYPOTHESIS]
        | - Numerical convergence demonstrated
        | - Exponential RC damping for high-freq suppression [HYPOTHESIS]
 
+-------|-----------------------------------|------------------------------
 IV     | STATIONARY PHASE-LOCKING           | [SOLID MATH]
 
        | - Resonant cavity hardware-phase alignment
@@ -63,30 +66,35 @@ IV     | STATIONARY PHASE-LOCKING           | [SOLID MATH]
        └───────┴────────┴──────────┴────────┴───────────┘
        [●] Node (Max Stress), [ ] Antinode (Max Flow)
 
+-------|-----------------------------------|------------------------------
 V      | FINITE SUM / THEORY OF EVERYTHING  | [HYPOTHESIS / SPECULATIVE PHYSICS]
 
        | - RC-damping for vacuum-energy convergence
        | - Bridges path integral stability, RCU geometry
        | - Numerically demonstrates finite sums for divergent series
 
+-------|-----------------------------------|------------------------------
 VI     | VACUUM CATASTROPHE REGULARIZATION  | [SPECULATIVE PHYSICS]
 
        | - RC low-pass filtering of high-frequency vacuum modes
        | - Time constant τ suppresses ω >> 3888 Hz
        | - Convergence at 137-LOCK / RCU baseline
 
+-------|-----------------------------------|------------------------------
 VII    | AI CLUSTER THERMAL CONTROL         | [SOLID MATH]
 
        | - Gradient descent optimization
        | - Stress & entropy minimization
        | - Python simulation validated numerically
 
+-------|-----------------------------------|------------------------------
 VIII   | EXTERNAL VALIDATION FRAMEWORK       | [HYPOTHESIS]
 
        | - Reproducibility protocol
        | - Node alignment & frequency sweep procedures
        | - Experimental hardware needed
 
+-------|-----------------------------------|------------------------------
 IX     | FORMULAE & CALCULATIONS            | [SOLID MATH]
 
        | - Detailed numeric examples

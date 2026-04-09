@@ -90,12 +90,14 @@ The system is built with a modular structure to ensure scalability and easy main
 3. **Feedback Loop**: The system adjusts fan speeds dynamically, constantly monitoring the temperature and making real-time adjustments.
 
 ### Key Formula:
+
 To determine fan speed based on temperature:
 
-python
+```python
 fan_speed = (T_i - T_env) * constant_factor
 
-Where:
+```
+##Where:
 
 T_i is the current temperature of the hardware.
 T_env is the environmental or reference temperature.

@@ -100,7 +100,8 @@ Where:
 T_i is the current temperature of the hardware.
 T_env is the environmental or reference temperature.
 constant_factor is an adjustable factor to set the responsiveness of fan speed.
-Installation & Setup
+
+##Installation & Setup
 Prerequisites
 
 Before starting, ensure you have the following installed:
@@ -119,7 +120,8 @@ Clone the repository to your local machine using the following command:
 
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
-Usage
+
+##Usage
 
 To start the cooling system, simply run the script:
 
@@ -130,11 +132,12 @@ This script will automatically monitor the CPU/GPU temperature and adjust the fa
 Example Output:
 CPU Temperature: 75°C -> Increase fan speed to 90%
 GPU Temperature: 80°C -> Increase fan speed to 95%
-Future Improvements
+
+##Future Improvements
 Self-Learning Algorithms: Implement machine learning to adapt the cooling strategy based on usage patterns, optimizing fan speed and cooling strategies over time.
 Multiple Fan Control: For larger systems, support individual fan control for better cooling efficiency.
 Integration with Cooling Software: Integrate with tools like MSI Afterburner or SpeedFan to control more advanced cooling mechanisms.
-License
 
+##License
 This project is licensed under the MIT License - see the LICENSE
  file for details.

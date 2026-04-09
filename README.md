@@ -97,7 +97,7 @@ To determine fan speed based on temperature:
 fan_speed = (T_i - T_env) * constant_factor
 
 ```
-##Where:
+Where:
 
 T_i is the current temperature of the hardware.
 T_env is the environmental or reference temperature.

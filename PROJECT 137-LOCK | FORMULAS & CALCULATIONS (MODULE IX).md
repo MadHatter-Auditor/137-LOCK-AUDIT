@@ -10,14 +10,15 @@ project, RCU-based resonance, RC-stabilized paths, phase-locking, and vacuum-ene
 regularization. Its goal is to provide reproducible models and mathematical
 structures that external experts can validate and expand.
 
-Transition from the metric system to the Royal Cubit Unit (RCU = 0.5236 m) 
-minimizes fractal and irrational deviations in standard metric analysis.
+The core of this project is the transition from the metric system to the Royal Cubit
+Unit (RCU = 0.5236 m), minimizing fractal and irrational deviations in standard
+metric analyses.
 
 --------------------------------------------------------------------------------
 CONTRIBUTORS
 --------------------------------------------------------------------------------
 - Madhatter (Lead Researcher / Initiator)
-- GPT-5 Mini (AI assistant for analysis, restructuring, and documentation)
+- GPT-5 Mini (AI Assistant for Analysis, Documentation, Restructuring)
 
 --------------------------------------------------------------------------------
 UNITS & CONSTANTS
@@ -32,54 +33,56 @@ S_E                         : Euclidean (stabilized) action
 --------------------------------------------------------------------------------
 MODULE MAP & THEORY STATUS
 --------------------------------------------------------------------------------
-Module | Focus Area                        | Theory Status
--------|-----------------------------------|------------------------------
-I      | CULPA-LATA AUDIT                  | [SOLID MATH]
-       | - Operational drift & thermal analysis
-       | - Psi-node calculation & stress mapping
-II     | NON-EUCLIDEAN PATHS               | [SOLID MATH]
-       | - Collatz-vortex corrected trajectories
-       | - Geometric drift & scaling factors
-III    | RC-STABILIZED LAGRANGIAN          | [SOLID MATH / HYPOTHESIS]
-       | - Euler-Lagrange damping via τ
-       | - Deterministic path selection formulas
-       | - Numerical convergence demonstrated
-       | - Exponential RC damping for high-freq suppression [HYPOTHESIS]
-IV     | STATIONARY PHASE-LOCKING          | [SOLID MATH]
-       | - Resonant cavity hardware-phase alignment
-       | - RCU mapping & integer harmonic enforcement
-       | - ASCII Node / Antinode Diagram:
+[Module I]    CULPA-LATA AUDIT
+  Focus: Operational drift, thermal & financial analysis
+  Status: [SOLID MATH]
+  Notes: Psi-node calculations & stress mapping
 
-       x -> |0   0.26RCU  0.5236RCU  0.78RCU  1.0472RCU|
-       ┌───────┬────────┬──────────┬────────┬───────────┐
-       │ [●]   │ [ ]    │ [●]      │ [ ]    │ [●]       │
-       └───────┴────────┴──────────┴────────┴───────────┘
-       [●] Node (Max Stress), [ ] Antinode (Max Flow)
+[Module II]   NON-EUCLIDEAN PATHS
+  Focus: Collatz-vortex corrected trajectories
+  Status: [SOLID MATH]
+  Notes: Geometric drift & scaling factors
 
-V      | FINITE SUM / THEORY OF EVERYTHING  | [HYPOTHESIS / SPECULATIVE PHYSICS]
-       | - RC-damping for vacuum-energy convergence
-       | - Bridges path integral stability, RCU geometry
-       | - Numerically demonstrates finite sums for divergent series
+[Module III]  RC-STABILIZED LAGRANGIAN
+  Focus: Euler-Lagrange damping via τ, deterministic path selection
+  Status: [SOLID MATH / HYPOTHESIS]
+  Notes: Numerical convergence demonstrated; RC-damping for high-freq suppression [HYPOTHESIS]
 
-VI     | VACUUM CATASTROPHE REGULARIZATION  | [SPECULATIVE PHYSICS]
-       | - RC low-pass filtering of high-frequency vacuum modes
-       | - Time constant τ suppresses ω >> 3888 Hz
-       | - Convergence at 137-LOCK / RCU baseline
+[Module IV]   STATIONARY PHASE-LOCKING
+  Focus: Resonant cavity hardware-phase alignment
+  Status: [SOLID MATH]
+  Notes: RCU mapping & integer harmonic enforcement
+  Example ASCII Node Diagram:
+    x -> |0   0.26RCU  0.5236RCU  0.78RCU  1.0472RCU|
+    ┌─────┬─────┬───────┬─────┬───────┐
+    │ [●] │ [ ] │ [●]   │ [ ] │ [●] │
+    └─────┴─────┴───────┴─────┴───────┘
+    [●] Node (Max Stress), [ ] Antinode (Max Flow)
 
-VII    | AI CLUSTER THERMAL CONTROL         | [SOLID MATH]
-       | - Gradient descent optimization
-       | - Stress & entropy minimization
-       | - Python simulation validated numerically
+[Module V]    FINITE SUM / THEORY OF EVERYTHING
+  Focus: RC-damping for vacuum-energy convergence
+  Status: [HYPOTHESIS / SPECULATIVE PHYSICS]
+  Notes: Bridges path integral stability, RCU geometry; finite sums demonstrated numerically
 
-VIII   | EXTERNAL VALIDATION FRAMEWORK       | [HYPOTHESIS]
-       | - Reproducibility protocol
-       | - Node alignment & frequency sweep procedures
-       | - Experimental hardware needed
+[Module VI]   VACUUM CATASTROPHE REGULARIZATION
+  Focus: RC low-pass filtering of high-frequency vacuum modes
+  Status: [SPECULATIVE PHYSICS]
+  Notes: Time constant τ suppresses ω >> 3888 Hz; finite convergence at 137-LOCK / RCU baseline
 
-IX     | FORMULAE & CALCULATIONS            | [SOLID MATH]
-       | - Detailed numeric examples
-       | - Stress, entropy, RC alignment calculations
-       | - ASCII & tabular presentation for clarity
+[Module VII]  AI CLUSTER THERMAL CONTROL
+  Focus: Gradient descent optimization, stress & entropy minimization
+  Status: [SOLID MATH]
+  Notes: Python simulations validated numerically
+
+[Module VIII] EXTERNAL VALIDATION FRAMEWORK
+  Focus: Reproducibility protocol, node alignment & frequency sweeps
+  Status: [HYPOTHESIS]
+  Notes: Experimental hardware required for full validation
+
+[Module IX]   FORMULAE & CALCULATIONS
+  Focus: Detailed numeric examples, stress/entropy calculations, RC alignment
+  Status: [SOLID MATH]
+  Notes: ASCII & tabular presentation for clarity
 
 --------------------------------------------------------------------------------
 EXAMPLE FORMULAE (MODULE IX)

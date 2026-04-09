@@ -1,6 +1,5 @@
 ===============================================================================
 MODULE 2 — MODAL DYNAMICS & DAMPED EVOLUTION
-File: MODULE_2_MODAL_DYNAMICS_AND_DAMPED_EVOLUTION.md
 Status: SOLID MATH | CORE SYSTEM COMPONENT
 ===============================================================================
 

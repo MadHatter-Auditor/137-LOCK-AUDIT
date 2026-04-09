@@ -92,7 +92,7 @@ The system is built with a modular structure to ensure scalability and easy main
 ### Key Formula:
 To determine fan speed based on temperature:
 
-``python
+python
 fan_speed = (T_i - T_env) * constant_factor
 
 Where:

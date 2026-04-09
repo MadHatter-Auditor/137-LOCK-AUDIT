@@ -1,228 +1,165 @@
 ================================================================================
-MODULE 9 — FORMULAS & CALCULATIONS
-STATUS: SOLID MATH (NUMERICAL FOUNDATION)
+MODULE 9 — DATA ANALYSIS & MODEL FITTING
+STATUS: QUANTITATIVE VALIDATION LAYER
 ================================================================================
 
 I. PURPOSE
 --------------------------------------------------------------------------------
-This module centralizes all core formulas used across the project.
+This module defines how experimental data (Module 8) is processed,
+analyzed, and compared to theoretical predictions (Modules 1, 7, 7.2).
 
-Goals:
-- Provide a consistent mathematical reference
-- Ensure dimensional correctness
-- Support reproducible numerical simulations
-
-All formulas are:
-- physically or mathematically standard
-- independent of speculative assumptions
+Goal:
+- Extract physical parameters from data
+- Quantify agreement with theory
+- Enable statistical validation
 
 ================================================================================
-II. THERMAL MODEL
+II. INPUT DATA
 --------------------------------------------------------------------------------
 
-A. Thermal Stress
+From measurements:
 
-    sigma_i = E * alpha * DeltaT_i     [Pa]
+- Temperature time series:
+    T_i(t)
 
-Where:
-- E        = Young’s modulus [Pa]
-- alpha    = thermal expansion coefficient [1/K]
-- DeltaT_i = T_i - T_env [K]
+- Derived:
+    Psi_i(t) = T_i(t) - <T_i>
 
---------------------------------------------------------------------------------
-
-B. Temperature Evolution (Discrete)
-
-    T_i(t+dt) = T_i(t)
-                + (Q_i / C_i) * dt
-                - h_i * (T_i - T_env) / C_i * dt
-
-Where:
-- Q_i  = heat input [W]
-- C_i  = heat capacity [J/K]
-- h_i  = cooling coefficient [W/K]
-
-Stability condition:
-
-    dt < min( C_i / h_i )
+- System parameters:
+    Q_i, h_i, C_i
 
 ================================================================================
-III. ENTROPY & ENERGY
+III. PARAMETER EXTRACTION
 --------------------------------------------------------------------------------
 
-A. Entropy Production
+1. DECAY RATE (gamma_i)
 
-    S_dot = sum_i ( Q_i / T_i )     [W/K]
+Fit:
+
+    Psi_i(t) = A * exp(-gamma_i * t)
+
+Method:
+- Log-linear regression
+- Least squares fit
 
 --------------------------------------------------------------------------------
 
-B. Total Stress Metric
+2. VARIANCE
 
-    Total_Psi = sum_i ( sigma_i^2 )
+    Var(Psi_i) = <Psi_i^2>
 
-Interpretation:
-- measures overall mechanical/thermal load
+--------------------------------------------------------------------------------
+
+3. AUTOCORRELATION
+
+    C(tau) = <Psi_i(t) Psi_i(t+tau)>
+
+Expected:
+
+    C(tau) ~ exp(-gamma_i * tau)
 
 ================================================================================
-IV. CONTROL & OPTIMIZATION
+IV. MODEL COMPARISON
 --------------------------------------------------------------------------------
 
-Cost function:
+Theoretical predictions:
 
-    J = sum_i [
-        lambda_sigma * sigma_i^2
-      + lambda_Q * (Q_i / T_i + beta * sigma_i^2)
-      + lambda_h * h_i^2
-    ]
+    gamma_i(theory) = h_i / C_i
 
---------------------------------------------------------------------------------
+    Var(Psi_i) ~ k_B T_i / C_i
 
-Gradients:
+Compare:
 
-    d_sigma_dQ_i = alpha * E / C_i
+    error_gamma = |gamma_i(exp) - gamma_i(theory)|
 
-    dJ_dQ_i = lambda_Q / T_i
-              + 2 * lambda_Q * beta * sigma_i * d_sigma_dQ_i
-
-    dJ_dh_i = 2 * lambda_h * h_i
-              - alpha * E * DeltaT_i / C_i
-
---------------------------------------------------------------------------------
-
-Update rules (gradient descent):
-
-    Q_i = Q_i - eta * dJ_dQ_i
-    h_i = h_i - eta * dJ_dh_i
+    error_var   = |Var(exp) - Var(theory)|
 
 ================================================================================
-V. STOCHASTIC DRIFT MODEL
+V. STATISTICAL VALIDATION
 --------------------------------------------------------------------------------
 
-A. Drift Evolution
+Metrics:
 
-    Psi_k(t + dt) = a * Psi_k(t) + xi_k(t)
+- Mean squared error (MSE)
+- R² (coefficient of determination)
+- Confidence intervals for fitted parameters
 
-Where:
-- a < 1 → damping
-- xi_k ~ N(0, sigma_k^2)
+Acceptance criteria:
 
---------------------------------------------------------------------------------
-
-B. Drift Energy
-
-    E_k = Psi_k^2
-
---------------------------------------------------------------------------------
-
-C. Dissipation
-
-    Q(t) = sum_k ( Gamma_k * E_k )
+- R² close to 1
+- small relative error (<5–10%)
+- consistent across nodes
 
 ================================================================================
-VI. PROBABILISTIC WEIGHTING
+VI. VISUALIZATION
 --------------------------------------------------------------------------------
 
-A. Action-like quantity
+Recommended plots:
 
-    S_k = integral ( Psi_k^2 dt )
+1. Time series:
+    Psi_i(t)
 
---------------------------------------------------------------------------------
+2. Log plot:
+    log(Psi_i) vs t  → linear if exponential
 
-B. Mode weight
+3. Autocorrelation:
+    C(tau)
 
-    Phi_k = exp( -S_k / S_scale )
-
---------------------------------------------------------------------------------
-
-C. Normalization
-
-    Phi_tilde_k = Phi_k / sum_j Phi_j
-
-Properties:
-- stable modes dominate
-- unstable modes suppressed
+4. Scatter:
+    gamma_i(exp) vs gamma_i(theory)
 
 ================================================================================
-VII. FREQUENCY & RC-TIME RELATION
+VII. INTERPRETATION
 --------------------------------------------------------------------------------
 
-RC-time constant:
+If agreement is good:
 
-    tau = 1 / (2 * pi * f)
+→ Model is physically validated
 
-Example:
-    f = 3888 Hz
-    tau ≈ 4.09e-5 s
+If deviations occur:
 
---------------------------------------------------------------------------------
-
-Exponential damping:
-
-    D(omega) = exp( -omega * tau )
-
-Interpretation:
-- high frequency → strong suppression
-- low frequency → preserved
-
-NOTE:
-- purely a mathematical filter unless physically implemented
+Possible causes:
+- Nonlinear effects
+- Coupling between nodes
+- Measurement noise
+- Incorrect parameter estimation
 
 ================================================================================
-VIII. NUMERICAL EXAMPLE (THERMAL NODE)
+VIII. MODEL REFINEMENT
 --------------------------------------------------------------------------------
 
-Given:
-- E = 200e9 Pa
-- alpha = 1.2e-5 1/K
-- DeltaT = 20 K
+If needed:
 
-Compute:
-
-    sigma = 200e9 * 1.2e-5 * 20
-          = 48e6 Pa
-
-Result:
-    sigma = 48 MPa
+- Introduce nonlinear damping
+- Include spatial coupling terms
+- Adjust noise model
 
 ================================================================================
-IX. ROLE OF RCU
+IX. OUTPUT
 --------------------------------------------------------------------------------
 
-RCU = 0.5236 m
+Validated parameters:
 
-Usage:
-- optional spatial scaling
-- geometric reference
+- gamma_i
+- fluctuation amplitude
+- system stability metrics
 
-NOT required for:
-- thermal equations
-- entropy calculations
-- stochastic models
+Final result:
+
+→ Quantitative validation of drift–thermal model
 
 ================================================================================
-X. CONSISTENCY CHECKS
+X. CONCLUSION
 --------------------------------------------------------------------------------
 
-All equations satisfy:
+This module completes the framework:
 
-- dimensional consistency
-- numerical stability (with proper dt)
-- compatibility with simulation frameworks
+    Theory → Experiment → Data → Validation
 
-================================================================================
-XI. CONCLUSION
---------------------------------------------------------------------------------
-
-This module provides:
-
-- a clean mathematical backbone
-- validated equations for simulation
-- a consistent reference for all modules
-
-It ensures:
+Enabling:
+- objective verification
 - reproducibility
-- clarity
-- separation from speculative elements
+- scientific credibility
 
 ================================================================================
 END OF MODULE 9

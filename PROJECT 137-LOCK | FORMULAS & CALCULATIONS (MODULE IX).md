@@ -37,7 +37,7 @@ Module | Focus Area                        | Theory Status
 I      | CULPA-LATA AUDIT                  | [SOLID MATH]
        | - Operational drift & thermal analysis
        | - Psi-node calculation & stress mapping
-
+-------|-----------------------------------|------------------------------
 II     | NON-EUCLIDEAN PATHS               | [SOLID MATH]
        | - Collatz-vortex corrected trajectories
        | - Geometric drift & scaling factors

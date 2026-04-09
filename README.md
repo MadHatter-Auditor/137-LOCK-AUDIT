@@ -1,189 +1,152 @@
 ================================================================================
-PROJECT 137-LOCK | VORTEX-SYSTEM V4.2
-Royal Cubit (RCU) Based Resonant Research Repository
-Status: VERIFIED | Integrity: 137-LOCK
+PROJECT 137-LOCK | VORTEX-SYSTEM V4.2 (CLEAN)
+Resonant Modeling & Thermal Control Framework
+Status: STRUCTURED | Peer-Review Ready (Partial)
 ================================================================================
+
 DESCRIPTION
 --------------------------------------------------------------------------------
-This repository collects all theoretical and numerical research related to 137-LOCK,
-RCU-based resonance, RC-path stabilization, phase-locking, and vacuum-energy
-regularization. Its goal is to provide reproducible models and mathematical
-structures that can be validated and extended by external experts.
+This repository contains a structured collection of mathematical models and
+numerical simulations for analyzing and controlling complex systems such as:
 
-Transition from the metric system to the Royal Cubit Unit (RCU = 0.5236 m)
-reduces fractal and irrational deviations in standard metric analyses.
+- Thermal behavior in high-density compute clusters
+- Modal dynamics in fluid and structural systems
+- Reduced-order representations of complex physics
 
---------------------------------------------------------------------------------
-CONTRIBUTORS
---------------------------------------------------------------------------------
-- Madhatter (Lead Researcher / Initiator)
-- GPT-5 Mini (AI Assistant: analysis, restructuring, documentation)
+The goal is to provide reproducible, testable models that can be validated
+and extended by external researchers.
 
 --------------------------------------------------------------------------------
-UNITS & CONSTANTS
+UNITS & SCALING
 --------------------------------------------------------------------------------
-RCU (Royal Cubit Unit)      : 0.5236 m ~ pi/6
-τ (RC-Time Constant)        : 40.9 μs @ 3888 Hz
-137-LOCK                    : Baseline harmonic resonance & phase alignment
-Phi                         : 1.61803... (Fractal / growth harmonic)
-Psi                         : Stress / drift coefficient
-S_E                         : Euclidean (stabilized) action
+Reference Length (L_ref) : 0.5236 m (user-defined scaling constant)
+Time Constant (τ)       : System-dependent damping parameter
+                          (example: τ ≈ 4.09e-5 s for 3888 Hz)
 
---------------------------------------------------------------------------------
-MODULE RELATION MAP (Conceptual Dependencies)
---------------------------------------------------------------------------------
-                   ┌─────────────────────────┐
-                   │  I. CULPA-LATA AUDIT    │ [SOLID MATH]
-                   └─────────────┬───────────┘
-                                 │
-                                 ▼
-                   ┌─────────────────────────┐
-                   │ II. NON-EUCLIDEAN PATHS │ [SOLID MATH]
-                   └─────────────┬───────────┘
-                                 │
-                                 ▼
-                   ┌─────────────────────────┐
-                   │ III. RC-STABILIZED      │ [SOLID MATH / HYPOTHESIS]
-                   │ LAGRANGIAN FRAMEWORK    │
-                   └─────────────┬───────────┘
-                                 │
-                                 ▼
-                   ┌─────────────────────────┐
-                   │ IV. STATIONARY          │ [SOLID MATH]
-                   │ PHASE-LOCKING           │
-                   └───────┬─────────┬───────┘
-                           │         │
-             ┌─────────────┘         └─────────────────────────────────┐
-             ▼                                                         ▼
-    ┌───────────────────────────┐                            ┌─────────────────────────────┐
-    │ V. FINITE SUM / THEORY OF │ [HYPOTHESIS / SPECULATIVE] │ VI. VACUUM CATASTROPHE &    │ [SPECULATIVE]
-    │ EVERYTHING                │                            │ PARAMETRIC REGULARIZATION   │
-    └───────────────────────────┘                            └─────────────────────────────┘
-
-Legend:
-────────── : Conceptual dependency flow
-Boxes      : Project modules / markdown files
-RCU / τ    : Key harmonic / RC-Time constants connecting topics
+NOTE:
+- The reference length is a geometric scaling choice
+- It does NOT alter physical laws
+- All equations remain dimensionally consistent
 
 --------------------------------------------------------------------------------
-MODULE DESCRIPTIONS
+CORE PRINCIPLES
 --------------------------------------------------------------------------------
-I. CULPA-LATA AUDIT
-   - Operational drift & thermal/financial analysis
-   - Psi-node calculation & torsional resonator countermeasures
-   - Status: SOLID MATH
-
-II. NON-EUCLIDEAN PATHS
-   - Collatz-vortex corrected trajectories
-   - Geometric drift & scaling factors
-   - Status: SOLID MATH
-
-III. RC-STABILIZED LAGRANGIAN
-   - Euler-Lagrange equations damped via τ
-   - Deterministic path selection formulas
-   - Numerical convergence demonstrated
-   - Exponential RC damping for high-frequency suppression
-   - Status: SOLID MATH / HYPOTHESIS
-
-IV. STATIONARY PHASE-LOCKING
-   - Resonant cavity hardware-phase alignment
-   - RCU mapping & integer harmonic enforcement
-   - ASCII Node/Antinode Diagram:
-      x -> |0   0.26RCU  0.5236RCU  0.78RCU  1.0472RCU|
-   
-    ┌───────┬────────┬──────────┬────────┬───────────┐
-    │  [●]  │   [ ]  │   [●]    │  [ ]   │    [●]    │
-    └───────┴────────┴──────────┴────────┴───────────┘
-       [●] Node (Max Stress), [ ] Antinode (Max Flow)
-   - Status: SOLID MATH
-
-V. FINITE SUM / THEORY OF EVERYTHING
-   - RC-damping for vacuum-energy convergence
-   - Numerical examples & empirical verification
-   - Status: HYPOTHESIS / SPECULATIVE
-
-VI. VACUUM CATASTROPHE REGULARIZATION
-   - RC low-pass filtering of high-frequency vacuum modes
-   - τ suppresses ω >> 3888 Hz
-   - Convergence at 137-LOCK / RCU baseline
-   - Status: SPECULATIVE
-
-VII. AI CLUSTER THERMAL CONTROL
-   - Gradient descent optimization
-   - Stress & entropy minimization
-   - Python simulation validated numerically
-   - Status: SOLID MATH
-
-VIII. EXTERNAL VALIDATION FRAMEWORK
-   - Reproducibility protocol
-   - Node alignment & frequency sweep procedures
-   - Experimental hardware needed
-   - Status: HYPOTHESIS
-
-IX. FORMULAE & CALCULATIONS
-   - Detailed numeric examples
-   - Stress, entropy, RC alignment calculations
-   - ASCII & tabular presentation for clarity
-   - Status: SOLID MATH
+1. Modal decomposition (Galerkin-based methods)
+2. Damped dynamic systems (stable evolution)
+3. Energy and entropy tracking
+4. Numerical stability and reproducibility
+5. Separation of validated physics and hypothesis
 
 --------------------------------------------------------------------------------
-MODULE EXAMPLE FORMULAE (MODULE IX)
+MODULE MAP & STATUS
 --------------------------------------------------------------------------------
-Thermal stress per node i:
-   σ_i = E * α * ΔT_i       [Pa]       [SOLID MATH]
 
-Entropy production rate:
-   S_dot = Σ_i (Q_i / T_i) [W/K]      [SOLID MATH]
+I. THERMAL-STRESS & ENTROPY CONTROL
+   Status: SOLID MATH
+   - Thermal stress: σ_i = E α ΔT_i
+   - Entropy production: S_dot = Σ (Q_i / T_i)
+   - Gradient-based optimization (Q_i, h_i)
+   - Discrete-time thermal evolution
+   - Fully numerically implementable
 
-Temperature evolution (discrete):
-   T_i(t+Δt) = T_i(t) + (Q_i/C_i)*Δt - h_i*(T_i-T_env)/C_i*Δt
-                                  [SOLID MATH]
+-------------------------------------------------------------------------------
 
-Gradient Descent Updates:
-   dσ_dQ_i = α * E / C_i
-   Q_i -= η*(λ_Q/T_i + 2*λ_Q*β*σ_i*dσ_dQ_i)
-   h_i -= η*(2*λ_h*h_i - α*E*ΔT_i / C_i)
-                                  [SOLID MATH]
+II. MODAL DYNAMICS & DAMPED EVOLUTION
+   Status: SOLID MATH
+   - u(x,t) = Σ_k u_k(t) φ_k(x)
+   - du_k/dt = -λ_k u_k + Σ C_kl u_l + ξ_k
+   - Stable, reduced-order system representation
+   - Compatible with CFD and structural dynamics
+   - Acts as a low-pass filtered system
+
+-------------------------------------------------------------------------------
+
+III. RESONANT FLOW & CFD EXTENSION
+   Status: HYPOTHESIS (TESTABLE)
+   - Modified Navier-Stokes with spatial forcing
+   - External potential: V(x) = α cos(2πx / L_ref)
+   - Goal: influence flow structures and heat distribution
+   - Requires experimental validation
+
+-------------------------------------------------------------------------------
+
+IV. PHASE-LOCKING & GEOMETRIC ALIGNMENT
+   Status: ENGINEERING MODEL
+   - Standing wave interpretation in bounded domains
+   - Node / antinode structure
+   - Application: hardware geometry alignment
+   - Requires empirical verification
+
+-------------------------------------------------------------------------------
+
+V. COLLatz / DISCRETE DYNAMICS MODEL
+   Status: EXPERIMENTAL / MATHEMATICAL EXPLORATION
+   - Discrete iterative mapping (3n+1)
+   - Visualization using phase-like representations
+   - No formal proof claims included
+
+-------------------------------------------------------------------------------
+
+VI. VACUUM ENERGY & RC-FILTER ANALOGY
+   Status: SPECULATIVE PHYSICS
+   - Exponential damping applied to frequency sums
+   - Interpreted as mathematical regularization
+   - NOT a replacement for physical renormalization
+   - Included for conceptual exploration only
+
+-------------------------------------------------------------------------------
+
+VII. VALIDATION FRAMEWORK
+   Status: IN DEVELOPMENT
+   - Numerical reproducibility
+   - Parameter sweeps
+   - Experimental measurement definitions
+   - Comparison with baseline models
+
+-------------------------------------------------------------------------------
+
+VIII. FORMULAE & NUMERICAL METHODS
+   Status: SOLID MATH
+   - Discrete integration schemes
+   - Stability conditions (Δt constraints)
+   - Optimization routines
+   - Data visualization methods
 
 --------------------------------------------------------------------------------
-VISUALIZATION & SIMULATION
+NUMERICAL IMPLEMENTATION
 --------------------------------------------------------------------------------
-- ASCII Bar Chart:
-   Node stress → bar_i = "█" * int(Psi_i / Psi_scale)
-   Node 0: ██████████
-   Node 1: ██████
-   Node 2: ████████████
-- Polar / vortex stress distribution plots
-- Supports hardware analogy & AI-cluster simulation
+- Python / NumPy based simulations
+- Explicit time-stepping methods
+- Log-domain calculations for stability (where needed)
+- Modular structure for testing individual components
 
 --------------------------------------------------------------------------------
-VALIDATION NOTES
+VALIDATION STRATEGY
 --------------------------------------------------------------------------------
-- All models are numerically reproducible via GitHub.
-- External experts can:
-  - Perform frequency sweeps
-  - Validate RCU node alignment
-  - Check convergence of finite sums
-- Speculative physics modules are clearly labeled
-- Solid math modules can be immediately verified numerically
-
---------------------------------------------------------------------------------
-USAGE & REFERENCE
---------------------------------------------------------------------------------
-1. Read markdown files independently or sequentially.
-2. Cross-check RC-Time, RCU, and 137-LOCK parameter links.
-3. Run simulations using hardware analogy or node-based model.
-4. Focus on numerical reproducibility and mathematical consistency.
+1. Verify numerical stability of each module
+2. Compare against known physical models (baseline)
+3. Perform parameter sweeps
+4. Identify measurable observables:
+   - Temperature
+   - Energy dissipation
+   - Mode amplitudes
 
 --------------------------------------------------------------------------------
 DISCLAIMER
 --------------------------------------------------------------------------------
-- Research framework only; not a new law of physics.
-- Designed for reproducible validation by experts.
-- AI-assisted documentation and restructuring.
-- All convergence claims are hypothesis-driven, based on numerical
-  and analytical models.
+- This is a research framework, not a new physical theory
+- Solid math modules are numerically verifiable
+- Hypothesis modules require experimental validation
+- Speculative sections are clearly labeled
+
+--------------------------------------------------------------------------------
+USAGE
+--------------------------------------------------------------------------------
+1. Study modules independently
+2. Run numerical simulations
+3. Validate against known physics
+4. Extend models where appropriate
 
 ================================================================================
-END OF README | PROJECT 137-LOCK
+END OF README | PROJECT 137-LOCK (CLEAN v2.0)
 ================================================================================

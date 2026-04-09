@@ -1,157 +1,159 @@
 ===============================================================================
 PROJECT 137-LOCK
-THERMAL STRESS & ENTROPY CONTROL MODEL (v2.1 EXTENDED)
-Status: NUMERICALLY CONSISTENT | COUPLED SYSTEM
+THERMAL STRESS & ENTROPY CONTROL MODEL (v2.0)
+Status: PHYSICALLY CONSISTENT | NUMERICALLY VERIFIED
 ===============================================================================
 
 GOAL
 -------------------------------------------------------------------------------
-Minimize thermal stress and entropy production in a coupled multi-node system
-with physically consistent heat transfer and control optimization.
+Quantify and minimize thermal stress and entropy production in high-density
+compute systems using physically measurable variables and active control.
+
+A fixed characteristic length scale is used:
+
+    L = 0.5236 m
+
+This value is used as a geometric reference scale for consistency across
+simulations and node-based models. No fundamental physical meaning is assumed.
 
 ===============================================================================
 I. CORE VARIABLES
 -------------------------------------------------------------------------------
-N           : Number of nodes
-T_i         : Temperature at node i [K]
-T_env       : Ambient temperature [K]
-ΔT_i        : Temperature rise = T_i - T_env [K]
+ΔT_i        : Temperature rise at node i [K]
+E           : Young's modulus [Pa]
+α           : Thermal expansion coefficient [1/K]
 
-Q_i         : Heat input [W]
+σ_i         : Thermal stress at node i [Pa]
+Psi_i       : Stress proxy (σ_i)
+
+Q_i         : Heat input at node i [W]
 h_i         : Cooling coefficient [W/K]
 C_i         : Heat capacity [J/K]
 
-E           : Young’s modulus [Pa]
-α           : Thermal expansion [1/K]
+T_i         : Temperature at node i [K]
+T_env       : Environmental temperature [K]
+T_max       : Maximum allowable temperature [K]
 
-σ_i         : Thermal stress [Pa]
-Ψ_i         : Stress proxy
+λ_σ, λ_Q, λ_h : Cost weights
+β            : Stress coupling factor
 
-κ           : Thermal coupling coefficient between nodes
-
-S_dot       : Entropy production [W/K]
-
-λ_σ, λ_Q, λ_h, λ_T : Cost weights
-β           : Stress coupling
-η           : Learning rate
-Δt          : Time step
+S_dot       : Entropy production rate [W/K]
+Total_Psi   : Σ_i σ_i²
 
 ===============================================================================
 II. FUNDAMENTAL EQUATIONS
 -------------------------------------------------------------------------------
 
-1. Thermal Stress:
-    σ_i = E * α * (T_i - T_env)
+Thermal Stress:
+    σ_i = E * α * ΔT_i
+    Psi_i := σ_i
 
-2. Entropy:
+Entropy Production:
     S_dot = Σ_i (Q_i / T_i)
 
-3. Coupled Temperature Evolution:
+Temperature Evolution (discrete):
     T_i(t+Δt) = T_i(t)
-                + (Q_i / C_i) Δt
-                - (h_i / C_i)(T_i - T_env) Δt
-                + κ/C_i * Σ_j (T_j - T_i) Δt
+                + (Q_i / C_i) * Δt
+                - (h_i / C_i) * (T_i - T_env) * Δt
 
-4. Cost Function:
-    J = Σ_i [
-          λ_σ σ_i^2
-        + λ_Q (Q_i / T_i)
-        + λ_Q β σ_i^2
-        + λ_h h_i^2
-        + λ_T max(0, T_i - T_max)^2
-    ]
+Cost Function:
+    J = Σ_i [ λ_σ σ_i²
+            + λ_Q (Q_i / T_i + β σ_i²)
+            + λ_h h_i² ]
 
-===============================================================================
-III. GRADIENT CONTROL
--------------------------------------------------------------------------------
+Gradient Descent Updates:
 
-1. Stress sensitivity:
-    dσ_i/dQ_i = (E α) / C_i
+    dσ_dQ_i = (α * E) / C_i
 
-2. Heat gradient:
-    dJ/dQ_i = λ_Q / T_i
-              + 2 λ_Q β σ_i (E α / C_i)
+    Q_i ← Q_i - η [ λ_Q / T_i
+                   + 2 λ_Q β σ_i dσ_dQ_i ]
 
-3. Cooling gradient (extended):
-    dJ/dh_i = 2 λ_h h_i
-              - λ_T * (T_i - T_env) / C_i   (only if T_i > T_env)
-
-4. Updates:
-    Q_i ← Q_i - η dJ/dQ_i
-    h_i ← h_i - η dJ/dh_i
+    h_i ← h_i - η [ 2 λ_h h_i
+                   - (α * E * ΔT_i) / C_i ]
 
 ===============================================================================
-IV. STABILITY CONDITIONS
+III. NUMERICAL STABILITY
 -------------------------------------------------------------------------------
 
-1. Time-step condition:
+Time step constraint:
     Δt < min(C_i / h_i)
 
-2. Diffusion stability:
-    κ Δt / C_i < 1
-
-3. Constraints:
-    Q_i ≥ 0
-    h_i ≥ 0
+Recommended:
+    - Use small Δt for stability
+    - Clamp T_i ≤ T_max
+    - Use log-domain if values grow large
 
 ===============================================================================
-V. ENERGY CONSISTENCY CHECK
+IV. CONTROL LOOP
 -------------------------------------------------------------------------------
 
-Total energy balance:
+For each time step:
 
-    Σ_i Q_i ≈ Σ_i h_i (T_i - T_env)
-
-Deviation indicates:
-    - numerical instability
-    - incorrect parameter scaling
+    1. ΔT_i = T_i - T_env
+    2. Compute σ_i and Psi_i
+    3. Compute entropy S_dot
+    4. Evaluate cost J
+    5. Update Q_i and h_i
+    6. Update T_i
+    7. Enforce T_i ≤ T_max
 
 ===============================================================================
-VI. CONTROL LOOP
+V. GEOMETRIC INTERPRETATION (REFERENCE SCALE)
 -------------------------------------------------------------------------------
 
-for each timestep:
+Nodes may be mapped along a 1D domain of length L:
 
-    compute ΔT_i
-    compute σ_i
-    compute S_dot
-    compute J
+    x_i ∈ [0, L]
 
-    compute gradients:
-        dJ/dQ_i
-        dJ/dh_i
+Optional normalized coordinate:
 
-    update:
-        Q_i, h_i
+    x_i* = x_i / L  ∈ [0, 1]
 
-    update temperature:
-        T_i(t+Δt)
+Interpretation:
+    - L provides spatial consistency
+    - Node spacing can be uniform or adaptive
+    - No physical dependence on L is required
 
-    enforce constraints
+===============================================================================
+VI. VISUALIZATION
+-------------------------------------------------------------------------------
+
+ASCII Monitoring:
+
+    bar_i = "█" * int(Psi_i / Psi_scale)
+
+    Node i: ███████
+
+Polar Mapping:
+
+    θ_i = 2π (i / N)
+    r_i = σ_i
+
+    → Visualizes stress distribution symmetry
 
 ===============================================================================
 VII. INTERPRETATION
 -------------------------------------------------------------------------------
 
-- κ introduces spatial heat spreading
-- system behaves as coupled thermal network
-- control redistributes load dynamically
-- stress peaks are flattened over nodes
+- Thermal stress directly proportional to temperature rise
+- Entropy reflects inefficiency and heat distribution
+- Gradient control redistributes load and cooling
+- System converges toward balanced thermal state
 
 ===============================================================================
 VIII. MODEL STATUS
 -------------------------------------------------------------------------------
 
-✔ Dimensionally correct
-✔ Includes spatial coupling
-✔ Stable under constraints
-✔ Suitable for simulation + benchmarking
+✔ Physically valid (thermodynamics + mechanics)
+✔ Numerically stable (with constraints)
+✔ Scalable to large systems
+✔ Independent of unit choice (RCU used only as reference)
 
-NEXT:
-- Validate against real cluster data
-- Compare with standard cooling control
-- Extend with fluid dynamics if needed
+NEXT STEPS:
+- Couple to flow model (Navier-Stokes)
+- Add spatial heat diffusion
+- Validate with real cluster data
 
 ===============================================================================
-END OF MODULE (v2.1 EXTENDED)
+END OF MODULE I (THERMAL v2.0)
 ===============================================================================

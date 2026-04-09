@@ -1,173 +1,71 @@
-===============================================================================
+================================================================================
 MODULE 2 — MODAL DYNAMICS & DAMPED EVOLUTION
-Status: SOLID MATH | CORE SYSTEM COMPONENT
-===============================================================================
+STATUS: PHYSICALLY CONSISTENT
+================================================================================
 
-GOAL
--------------------------------------------------------------------------------
-Represent complex physical systems (thermal, fluid, structural) as a set of
-coupled modes, enabling reduced-order modeling and stable dynamic evolution.
+I. PURPOSE
+--------------------------------------------------------------------------------
+This module describes the dynamical evolution of system states under
+damping and external forcing.
 
-===============================================================================
-I. CORE VARIABLES
--------------------------------------------------------------------------------
+Goal:
+- Model time evolution of system modes
+- Analyze stability and damping behavior
 
-u(x,t)      : Physical field (temperature, velocity, etc.)
-φ_k(x)      : Orthonormal spatial basis functions
+================================================================================
+II. GOVERNING EQUATION
+--------------------------------------------------------------------------------
 
-u_k(t)      : Mode amplitude
-k           : Mode index
+General form:
 
-λ_k         : Total damping rate per mode
-τ           : Global damping timescale
-
-C_kl        : Mode coupling matrix
-Γ_k         : Mode-dependent dissipation
-ξ_k(t)      : Stochastic forcing (noise)
-
-===============================================================================
-II. MODAL DECOMPOSITION
--------------------------------------------------------------------------------
-
-Field representation:
-
-    u(x,t) = Σ_k u_k(t) φ_k(x)
-
-Orthonormality condition:
-
-    ∫ φ_k(x) φ_l(x) dx = δ_kl
-
-Interpretation:
-
-    - Each φ_k represents a spatial pattern (mode)
-    - u_k(t) describes the time evolution of that mode
-
-===============================================================================
-III. MODE EVOLUTION
--------------------------------------------------------------------------------
-
-General dynamic equation:
-
-    du_k/dt = F_k(u)
-              - λ_k u_k
-              + Σ_l C_kl u_l
-              + ξ_k(t)
+    dX/dt = F(X) - gamma * X
 
 Where:
+- X       : system state vector
+- F(X)    : system dynamics
+- gamma   : damping coefficient
 
-    λ_k = (1/τ + Γ_k)
+================================================================================
+III. LINEARIZED SYSTEM
+--------------------------------------------------------------------------------
 
-    F_k(u)   : Nonlinear interaction term
-    C_kl     : Mode coupling matrix
-    Γ_k      : Dissipation per mode
-    ξ_k(t)   : Gaussian noise term
+Near equilibrium:
 
--------------------------------------------------------------------------------
+    dX/dt ≈ A * X - gamma * X
 
-Simplified (linear, decoupled case):
-
-    du_k/dt = -λ_k u_k
+Where:
+- A is the system matrix
 
 Solution:
 
-    u_k(t) = u_k(0) * exp(-λ_k t)
+    X(t) ~ exp[(A - gamma I)t]
 
-===============================================================================
-IV. ENERGY REPRESENTATION
--------------------------------------------------------------------------------
+================================================================================
+IV. STABILITY CONDITION
+--------------------------------------------------------------------------------
 
-Energy per mode:
+System is stable if:
 
-    E_k = (1/2) u_k²
+    Re(lambda_i - gamma) < 0
 
-Total energy:
+Where:
+- lambda_i are eigenvalues of A
 
-    E_total = Σ_k E_k
+================================================================================
+V. PHYSICAL INTERPRETATION
+--------------------------------------------------------------------------------
 
-Energy dissipation:
+- gamma represents dissipation (cooling, resistance)
+- modes decay exponentially if damping dominates
+- no special frequencies are assumed
 
-    dE_k/dt = -2 λ_k E_k + u_k ξ_k(t)
+================================================================================
+VI. CONCLUSION
+--------------------------------------------------------------------------------
 
-===============================================================================
-V. FILTERING INTERPRETATION
--------------------------------------------------------------------------------
+System dynamics follow standard damped evolution with stability determined
+by eigenvalues and damping strength.
 
-The system behaves as a low-pass filter:
-
-    High-frequency modes (large k):
-        → larger λ_k
-        → faster decay
-
-    Low-frequency modes:
-        → dominate long-term behavior
-
-Frequency response approximation:
-
-    H_k(ω) ≈ 1 / (iω + λ_k)
-
-===============================================================================
-VI. NUMERICAL IMPLEMENTATION
--------------------------------------------------------------------------------
-
-Discrete time update (Euler scheme):
-
-    u_k(t+Δt) = u_k(t)
-                + Δt * [ -λ_k u_k(t)
-                         + Σ_l C_kl u_l(t)
-                         + ξ_k(t) ]
-
-Stability condition:
-
-    Δt < 1 / max(λ_k)
-
-Noise model:
-
-    ξ_k(t) ~ N(0, σ_k²)
-
-===============================================================================
-VII. GEOMETRIC DOMAIN
--------------------------------------------------------------------------------
-
-Spatial domain:
-
-    x ∈ [0, L_ref]
-
-Reference length:
-
-    L_ref = 0.5236 m
-
-Example basis functions:
-
-    φ_k(x) = sin(k π x / L_ref)
-
-NOTE:
-- L_ref defines geometric scaling only
-- It does NOT modify physical laws
-
-===============================================================================
-VIII. INTERPRETATION
--------------------------------------------------------------------------------
-
-- Complex systems are decomposed into simpler modes
-- Damping stabilizes the system
-- Dominant modes determine observable behavior
-- Enables efficient simulation and control
-
-===============================================================================
-IX. CONNECTIONS
--------------------------------------------------------------------------------
-
-Direct links to other modules:
-
-- Module 1 (Thermal Model):
-      u(x,t) = T(x,t)
-
-- CFD systems:
-      u(x,t) = velocity field
-
-- Control systems:
-      feedback applied to u_k
-
-===============================================================================
-END OF MODULE 2 — MODAL DYNAMICS & DAMPED EVOLUTION
-===============================================================================
+================================================================================
+END OF MODULE 2
+================================================================================
